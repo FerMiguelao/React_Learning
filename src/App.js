@@ -1,25 +1,36 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
 
-function App() {
+function Card(props) {
+  const {name,email,id} = props ;  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="tc bg-light-green dib br3 pa3 ma2 grow bw2 shadow-5">
+      <img src={`https://robohash.org/testeabacate${id}`} alt="Robozin" />
+      <div>
+        <h2>{name}</h2>
+        <p>{email}</p>
+      </div>
     </div>
   );
 }
 
-export default App;
+
+class Card2 extends React.Component {
+  
+  render() {
+    const {name,email,id} = this.props ;  
+    return (
+      <div className="tc bg-light-green dib br3 pa3 ma2 grow bw2 shadow-5">
+        <img src={`https://robohash.org/testeabacate${id}`} alt="Robozin" />
+        <div>
+          <h2>{name}</h2>
+          <p>{email}</p>
+        </div>
+      </div>
+    );
+  }
+
+}
+
+export { Card };
+export { Card2 };
